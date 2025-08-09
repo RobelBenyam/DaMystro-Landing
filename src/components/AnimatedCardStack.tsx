@@ -24,7 +24,7 @@ export default function AnimatedCardStack({ className }: Props) {
   const rafRef = useRef<number | null>(null)
   const timeRef = useRef(0)
   const hoveringRef = useRef(false)
-  const [tick, setTick] = useState(0)
+  const [, force] = useState(0)
   const cursorPx = useRef(0.5)
   const cursorPy = useRef(0.5)
 
@@ -64,7 +64,7 @@ export default function AnimatedCardStack({ className }: Props) {
       currentTiltY.current += (targetTiltY.current - currentTiltY.current) * 0.12
       currentShiftX.current += (targetShiftX.current - currentShiftX.current) * 0.12
       currentScale.current += (targetScale.current - currentScale.current) * 0.1
-      setTick(t => (t + 1) % 100000)
+      force(v => (v + 1) % 100000)
       rafRef.current = requestAnimationFrame(loop)
     }
     rafRef.current = requestAnimationFrame(loop)
@@ -100,7 +100,7 @@ export default function AnimatedCardStack({ className }: Props) {
             className={`absolute left-1/2 top-1/2 h-[200px] w-[140px] sm:h-[240px] sm:w-[170px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-gradient-to-br ${c.from} ${c.to} shadow-2xl card-glow overflow-hidden`}
             style={{ transform: `translate3d(${c.offsetX + shiftX * ((i - 1) * 0.6)}px, ${c.offsetY}px, ${i * 40 + 80}px) rotateZ(${c.rotate}deg)` }}
           >
-            <div className="absolute inset-0 rounded-2xl" style={{ background: `radial-gradient(600px circle at ${spotX}% ${spotY}%, rgba(255,255,255,0.18), transparent 60%)`, mixBlendMode: "screen" as any, transition: "background 80ms linear" }} />
+            <div className="absolute inset-0 rounded-2xl mix-screen" style={{ background: `radial-gradient(600px circle at ${spotX}% ${spotY}%, rgba(255,255,255,0.18), transparent 60%)`, transition: "background 80ms linear" }} />
             <div className="absolute inset-0">
               <div className="shine" />
             </div>

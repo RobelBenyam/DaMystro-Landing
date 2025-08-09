@@ -98,7 +98,7 @@ export default function Home() {
       <section id="contact" className="py-20 bg-black/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
-          <p className="text-xl text-gray-300 mb-12">Ready to join the adventure? We'd love to hear from you.</p>
+          <p className="text-xl text-gray-300 mb-12">Ready to join the adventure? We&apos;d love to hear from you.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center"><div className="text-3xl mb-4">📧</div><h3 className="text-xl font-bold text-white mb-2">Email</h3><p className="text-gray-300">hello@damystro.com</p></div>
             <div className="text-center"><div className="text-3xl mb-4">📍</div><h3 className="text-xl font-bold text-white mb-2">Location</h3><p className="text-gray-300">San Francisco, CA</p></div>
